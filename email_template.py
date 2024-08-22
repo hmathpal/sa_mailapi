@@ -1,4 +1,4 @@
-def generate_email_html(user_name, content_block):
+def generate_email_html(user_name, content_block_1,content_block_2,content_block_3):
     html_content = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -22,9 +22,17 @@ def generate_email_html(user_name, content_block):
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }}
+            .header {{
+                background-color: #003366; /* Navy Blue */
+                padding: 10px 0;
+                text-align: center;
+                color: white;
+                font-size: 24px;
+                border-radius: 5px 5px 0 0;
+            }}
             .content-block {{
                 padding: 20px;
-                background-color: #e6f7ff; /* Very light blue */
+                background-color: #f1f3f5; /* Very Very Light Slate */
                 border-radius: 5px;
                 margin-bottom: 20px;
             }}
@@ -35,43 +43,77 @@ def generate_email_html(user_name, content_block):
                 color: #555555;
                 line-height: 1.6;
             }}
+            .cta-button {{
+                display: block;
+                width: 150px;
+                margin: 20px auto;
+                padding: 10px;
+                background-color: #003366; /* Navy Blue */
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 16px;
+            }}
             .thank-you-note {{
                 padding: 20px;
                 color: #333333;
                 text-align: left;
                 font-size: 16px;
             }}
+            .footer {{
+                background-color: #333333; /* Dark Gray */
+                padding: 10px 0;
+                text-align: center;
+                color: white;
+                font-size: 14px;
+                border-radius: 0 0 5px 5px;
+            }}
         </style>
     </head>
     <body>
         <div class="container">
-            <!-- Welcome and Greeting Section -->
+            <!-- Header Section -->
+            <div class="header">
+                DemoPharma
+            </div>
+
+            <!-- Content Section -->
             <div class="content-block">
                 <h2>Welcome!</h2>
                 <p>
-                    Dear {user_name},
+                    Hi {user_name},
                 </p>
-                <p>
-                    We are delighted to welcome you to our community! Our team is excited to help you get the most out of our services.
-                </p>
-               
                 <div>
-                    {content_block}
+                    {content_block_1}
                 </div>
 
-            </div>
+                <div>
+                    {content_block_2}
+                </div>
 
-          
+                 <div>
+                    {content_block_3}
+                </div>
 
            
 
+            <!-- CTA Button -->
+            <a href="#" class="cta-button">Contact Us</a>
+
             <!-- Thank You Note -->
             <div class="thank-you-note">
-                <p>Thank you,</p>
+                <p><b>Thank you</b>,</p>
                 <p>James Smith</p>
-                <p>Demo Corp, Inc</p>
-                <p>1234 Elm Street, Suite 5678</p>
-                <p>Metropolis, NY 10101</p>
+                <p>DemoPharma, Inc</p>
+                <p>Phone: +1 416-908-9876</p>
+            </div>
+
+            <!-- Footer Section -->
+            <div class="footer">
+                &copy; 2024 DemoPharma, Inc. All rights reserved.
+                <br>
+                1234 Elm Street, Suite 5678, Metropolis, NY 10101
             </div>
         </div>
     </body>
