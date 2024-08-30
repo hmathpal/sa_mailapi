@@ -1,4 +1,4 @@
-def generate_email_html(user_name, content_block_1,content_block_2,content_block_3):
+def generate_email_html(user_name, img_url, content_block_1, content_block_2, content_block_3):
     html_content = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -15,7 +15,7 @@ def generate_email_html(user_name, content_block_1,content_block_2,content_block
             }}
             .container {{
                 width: 100%;
-                max-width: 600px;
+                max-width: 700px;  /* Increased width */
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #ffffff;
@@ -69,45 +69,60 @@ def generate_email_html(user_name, content_block_1,content_block_2,content_block
                 font-size: 14px;
                 border-radius: 0 0 5px 5px;
             }}
+            .image-block {{
+                text-align: center;
+                margin: 20px 0;
+            }}
         </style>
     </head>
     <body>
         <div class="container">
             <!-- Header Section -->
             <div class="header">
-                DemoPharma
+                OmniBrief Assistant
             </div>
 
             <!-- Content Section -->
             <div class="content-block">
-                <h2>Welcome!</h2>
+               <!-- Image Section -->
+                <div class="image-block">
+                    <img src="{img_url}" alt="Descriptive Alt Text"  width="660" style="display:block;"> <!-- Adjusted image width -->
+                 
+                    
+
+                </div>
+
                 <p>
                     Hi {user_name},
                 </p>
                 <div>
                     {content_block_1}
                 </div>
+                
+                
 
+              
                 <div>
                     {content_block_2}
                 </div>
 
-                 <div>
+                <div>
                     {content_block_3}
                 </div>
 
-           
 
-            <!-- CTA Button -->
-            <a href="#" class="cta-button">Contact Us</a>
-
-            <!-- Thank You Note -->
+                 <!-- Thank You Note -->
             <div class="thank-you-note">
                 <p><b>Thank you</b>,</p>
-                <p>James Smith</p>
+                <p>Omnibrief Assistant | Sales Consultant</p>
                 <p>DemoPharma, Inc</p>
                 <p>Phone: +1 416-908-9876</p>
             </div>
+            </div>
+
+          
+
+           
 
             <!-- Footer Section -->
             <div class="footer">
