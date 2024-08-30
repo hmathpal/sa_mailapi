@@ -31,16 +31,19 @@ def send_template_message(reciever_name,reciever_email, email_subject):
 def send_simple_message(reciever_name,img_url, reciever_email, email_subject, content_block_1, content_block_2, content_block_3, attachment=None):
 
 
-    
+    print("We are here")
     html_content = generate_email_html(reciever_name, img_url,content_block_1,content_block_2,content_block_3)
-
-
+   
+    print("We are here after email")
+     
   
     # Retrieve environment variables
     api_key = os.getenv('MAILGUN_API_KEY')
     domain = os.getenv('MAILGUN_DOMAIN')
     from_email = os.getenv('MAILGUN_FROM')
     to_email = reciever_email
+   
+    print("We are here after email api_key", api_key)
 
     return requests.post(
         f"https://api.mailgun.net/v3/{domain}/messages",

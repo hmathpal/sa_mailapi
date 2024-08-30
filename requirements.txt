@@ -2,3 +2,5 @@ Flask
 Gunicorn
 Requests
 python-dotenv
+jsonify 
+sentry_sdk
